@@ -1,0 +1,13 @@
+# Node modules
+node_modules/
+
+# Build output Angular
+frontend/web/.angular/
+frontend/web/dist/
+frontend/web/node_modules/
+
+# Environment files
+*.env
+
+# Logs
+*.log

@@ -1,0 +1,103 @@
+<div class="card">
+  <div class="card-header card-header-light">
+    <h3 class="card-title">Simulasi</h3>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="card-body p-3">
+      <div class="row row-cards">
+        <div class="col-sm-6">
+          <div>
+            <label class="form-label required">Job Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="jobName"
+              placeholder="Job Name"
+              required
+              formControlName="jobName"
+            />
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div>
+            <label class="form-label required">Job Size</label>
+            <input
+              type="number"
+              class="form-control"
+              name="jobSize"
+              placeholder="Job Size"
+              required
+              formControlName="jobSize"
+            />
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div>
+            <label class="form-label required">Business Value</label>
+            <input
+              type="number"
+              class="form-control"
+              name="businessValue"
+              placeholder="Business Value"
+              required
+              formControlName="businessValue"
+            />
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div>
+            <label class="form-label required">Risk Reduction</label>
+            <input
+              type="number"
+              class="form-control"
+              name="riskReduction"
+              placeholder="Risk Reduction"
+              required
+              formControlName="riskReduction"
+            />
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div>
+            <label class="form-label required">Time Criticality</label>
+            <input
+              type="number"
+              class="form-control"
+              name="timeCriticality"
+              placeholder="Time Criticality"
+              required
+              formControlName="timeCriticality"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div
+            class="alert alert-danger mb-0 mt-3"
+            role="alert"
+            *ngIf="error()"
+          >
+            {{ error() }}
+          </div>
+          <div
+            class="alert alert-success mb-0 mt-3"
+            role="alert"
+            *ngIf="result()"
+          >
+            WSJF Score {{ result() }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-end p-3">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="form.invalid || loading()"
+      >
+        {{ loading() ? "Mohon Menunggu" : "Kalkulasi" }}
+      </button>
+    </div>
+  </form>
+</div>
